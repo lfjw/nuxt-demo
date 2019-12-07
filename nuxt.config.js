@@ -3,6 +3,9 @@ module.exports = {
   transition: {
     name: 'l' // 更改动画名字 l-enter-active  默认为page-enter-active
   },
+  env: {
+    baseUrl: process.env.NODE_ENV == 'development' ? 'api' : '线上地址'
+  },
   router: {
     middleware: ['router']
   },
@@ -49,7 +52,8 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '@/plugins/iview'
+    '@/plugins/iview',
+    '@/plugins/axios',
   ],
   /*
    ** Nuxt.js dev-modules
@@ -58,7 +62,7 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/axios'],
   /*
    ** Build configuration
    */

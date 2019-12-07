@@ -11,9 +11,6 @@ export default {
     return {};
   },
   methods: {},
-  created() {
-    console.log(this.$route.query.id)
-  },
 };
 </script> 
 <style scoped lang='less'>
